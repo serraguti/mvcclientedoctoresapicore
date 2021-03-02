@@ -3,6 +3,28 @@
         var url = "https://apidoctorpgs.azurewebsites.net/";
         $(document).ready(function () {
             cargarDoctores();
+            cargarEspecialidades();
+            $("#botonbuscar").click(function () {
+                var espe = $("#especialidad option:selected").val();
+                var request = "api/doctores/doctoresespecialidad/" + espe;
+                $.ajax({
+                    url: url + request,
+                    method: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        var html = "";
+                        $.each(data, function (ind, doctor) {
+                            html += "<tr>";
+                            html += "<td>" + doctor.apellido + "</td>";
+                            html += "<td>" + doctor.especialidad + "</td>";
+                            html += "<td>" + doctor.salario + "</td>";
+                            html += "<td>" + doctor.hospital + "</td>";
+                            html += "</tr>";
+                        });
+                        $("#tabladoctores tbody").html(html);
+                    }
+                });
+            });
         });
 
         function cargarDoctores() {
@@ -27,7 +49,19 @@
         }
 
         function cargarEspecialidades() {
-
+            var request = "api/doctores/especialidades";
+            $.ajax({
+                url: url + request,
+                method: "GET",
+                dataType: "json",
+                success: function (data) {
+                    var html = "";
+                    $.each(data, function (ind, espe) {
+                        html += "<option value='" + espe + "'>" + espe + "</option>";
+                    });
+                    $("#especialidad").html(html);
+                }
+            });
         }
     </script>
 }

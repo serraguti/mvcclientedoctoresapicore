@@ -8,7 +8,6 @@ C:\Users\Serra\Desktop\MvcDoctoresClienteApi\MvcDoctoresClienteApi\bin\Debug\net
 C:\Users\Serra\Desktop\MvcDoctoresClienteApi\MvcDoctoresClienteApi\bin\Debug\netcoreapp3.1\MvcDoctoresClienteApi.pdb
 C:\Users\Serra\Desktop\MvcDoctoresClienteApi\MvcDoctoresClienteApi\bin\Debug\netcoreapp3.1\MvcDoctoresClienteApi.Views.dll
 C:\Users\Serra\Desktop\MvcDoctoresClienteApi\MvcDoctoresClienteApi\bin\Debug\netcoreapp3.1\MvcDoctoresClienteApi.Views.pdb
-C:\Users\Serra\Desktop\MvcDoctoresClienteApi\MvcDoctoresClienteApi\obj\Debug\netcoreapp3.1\MvcDoctoresClienteApi.csprojAssemblyReference.cache
 C:\Users\Serra\Desktop\MvcDoctoresClienteApi\MvcDoctoresClienteApi\obj\Debug\netcoreapp3.1\MvcDoctoresClienteApi.AssemblyInfoInputs.cache
 C:\Users\Serra\Desktop\MvcDoctoresClienteApi\MvcDoctoresClienteApi\obj\Debug\netcoreapp3.1\MvcDoctoresClienteApi.AssemblyInfo.cs
 C:\Users\Serra\Desktop\MvcDoctoresClienteApi\MvcDoctoresClienteApi\obj\Debug\netcoreapp3.1\MvcDoctoresClienteApi.csproj.CoreCompileInputs.cache
