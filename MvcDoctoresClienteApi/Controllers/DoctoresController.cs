@@ -30,6 +30,8 @@ namespace MvcDoctoresClienteApi.Controllers
         public async Task<IActionResult> DoctoresServidor()
         {
             List<Doctor> doctores = await this.service.GetDoctoresAsync();
+            List<String> especialidades = await this.service.GetEspecialidadesAsync();
+            ViewData["ESPECIALIDADES"] = especialidades;
             return View(doctores);
         }
     }

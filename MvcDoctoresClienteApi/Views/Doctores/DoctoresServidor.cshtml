@@ -4,27 +4,32 @@
     ViewData["Title"] = "DoctoresServidor";
 }
 
+@{ 
+    List<String> especialidades = ViewData["ESPECIALIDADES"] as List<String>;
+}
+
 <h1>Doctores Api Servidor C#</h1>
 
-<table class="table table-bordered">
+<form method="post">
+    <label>Seleccione una especialidad: </label>
+    <select name="especialidad" class="form-control">
+        @foreach (String espe in especialidades)
+        {
+            <option value="@espe">@espe</option>
+        }
+    </select>
+    <button type="submit" class="btn btn-outline-info">
+        Mostrar doctores
+    </button>
+</form>
+
+<table class="table table-bordered table-danger">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IdDoctor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apellido)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Especialidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Salario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hospital)
-            </th>
-            <th></th>
+            <th>Apellido</th>
+            <th>Especialidad</th>
+            <th>Salario</th>
+            <th>Hospital</th>
         </tr>
     </thead>
     <tbody>
@@ -44,11 +49,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Hospital)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
 }

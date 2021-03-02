@@ -65,5 +65,28 @@ namespace MvcDoctoresClienteApi.Services
                 }
             }
         }
+
+        public async Task<List<String>> GetEspecialidadesAsync()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                String request = "api/doctores/especialidades";
+                client.BaseAddress = new Uri(this.url);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(this.header);
+                HttpResponseMessage response =
+                    await client.GetAsync(request);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<String> especialidades =
+                        await response.Content.ReadAsAsync<List<String>>();
+                    return especialidades;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }
